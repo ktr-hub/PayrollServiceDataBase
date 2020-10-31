@@ -23,3 +23,8 @@ SELECT * FROM employee_payroll;
 Select salary from employee_payroll
  where start_Date between CAST('2000-01-01' AS date) and cast('2022-01-01' AS date);
 
+ 
+/*UC6-Add Gender Column*/
+Alter table employee_payroll 
+add Gender char;
+
