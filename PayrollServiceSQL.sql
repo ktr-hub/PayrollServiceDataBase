@@ -60,4 +60,11 @@ address VARCHAR(10) DEFAULT 'Mumbai' NOT NULL,
 department VARCHAR(5) DEFAULT 'RPA' NOT NULL;
 SELECT * FROM employee_payroll;
 
+/*UC9-ExtendColumns*/
+ALTER TABLE employee_payroll 
+ADD BasicPay varchar,
+Deductions varchar,
+Taxableay varchar;
+SELECT * FROM employee_payroll;
+
 
