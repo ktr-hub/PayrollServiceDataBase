@@ -11,3 +11,8 @@ name VARCHAR(50) NOT NULL,
 salary DECIMAL(10,2) NOT NULL,
 start_Date DATETIME NOT NULL ) ;
 
+
+/*UC3-Inserting Values into dataTable*/
+insert into employee_payroll(name,salary,start_date)
+ values('tiru',20000.0,'2020-01-01');
+
