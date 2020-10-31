@@ -30,3 +30,27 @@ add Gender char;
 
 Update employee_payroll set Gender='M' where name='tiru';
 
+/*UC7-Retrieving Sum, Average, Min, Max, Count*/
+
+insert into employee_payroll(name,salary,start_date,gender)
+ values('rtkr',25000.0,'2019-01-01','F');
+
+insert into employee_payroll(name,salary,start_date,gender)
+ values('ktr',19000.0,'2016-01-01','M');
+
+select sum(salary) As totalFemaleSalary from employee_payroll 
+where gender='F' GROUP BY gender;
+
+select AVG(salary) As averageMaleSalary from employee_payroll 
+where gender='M' GROUP BY gender;
+
+select MIN(salary) As minimumMaleSalary from employee_payroll
+where gender='M' Group by gender;
+
+select MAX(salary) As maximumFemaleSalary from employee_payroll
+where gender='F' Group by gender;
+
+select COUNT(name) As MaleCount from employee_payroll
+where gender='M' Group by gender;
+
+
