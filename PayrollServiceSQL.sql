@@ -16,3 +16,5 @@ start_Date DATETIME NOT NULL ) ;
 insert into employee_payroll(name,salary,start_date)
  values('tiru',20000.0,'2020-01-01');
 
+ /*UC4-Retrieving Data*/
+SELECT * FROM employee_payroll;
