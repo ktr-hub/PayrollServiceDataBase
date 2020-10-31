@@ -18,3 +18,8 @@ insert into employee_payroll(name,salary,start_date)
 
  /*UC4-Retrieving Data*/
 SELECT * FROM employee_payroll;
+
+/*UC5-DataBetweenDates*/
+Select salary from employee_payroll
+ where start_Date between CAST('2000-01-01' AS date) and cast('2022-01-01' AS date);
+
