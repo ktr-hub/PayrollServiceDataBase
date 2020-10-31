@@ -53,4 +53,11 @@ where gender='F' Group by gender;
 select COUNT(name) As MaleCount from employee_payroll
 where gender='M' Group by gender;
 
+/*UC8-ExtendColumns*/
+ALTER TABLE employee_payroll 
+ADD phone VARCHAR(10),
+address VARCHAR(10) DEFAULT 'Mumbai' NOT NULL,
+department VARCHAR(5) DEFAULT 'RPA' NOT NULL;
+SELECT * FROM employee_payroll;
+
 
