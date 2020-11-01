@@ -143,4 +143,7 @@ select gender,Count(netPay) AS CountSalaryAccounts from employee,payroll
 where employee.empId = payroll.empId
 group by gender;
 
-
+select empName,deptName,netPay,companyName from employee,department,employeeDepartment,payroll,company
+where employeeDepartment.empId = employee.empId 
+AND department.deptId = employeeDepartment.deptId
+AND payroll.empId = employeeDepartment.empId;
