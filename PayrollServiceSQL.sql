@@ -38,20 +38,17 @@ insert into employee_payroll(name,salary,start_date,gender)
 insert into employee_payroll(name,salary,start_date,gender)
  values('ktr',19000.0,'2016-01-01','M');
 
-select sum(salary) As totalFemaleSalary from employee_payroll 
+select gender,sum(salary) As totalFemaleSalary from employee_payroll 
 where gender='F' GROUP BY gender;
 
-select AVG(salary) As averageMaleSalary from employee_payroll 
+select gender,AVG(salary) As averageMaleSalary from employee_payroll 
 where gender='M' GROUP BY gender;
 
-select MIN(salary) As minimumMaleSalary from employee_payroll
-where gender='M' Group by gender;
+select gender,MIN(BasicPay) As minimumMaleSalary from employee_payroll
+Group by gender;
 
-select MAX(salary) As maximumFemaleSalary from employee_payroll
-where gender='F' Group by gender;
+select gender,count(*) as Total from employee_payroll group by gender;
 
-select COUNT(name) As MaleCount from employee_payroll
-where gender='M' Group by gender;
 
 /*UC8-ExtendColumns*/
 ALTER TABLE employee_payroll 
@@ -62,9 +59,9 @@ SELECT * FROM employee_payroll;
 
 /*UC9-ExtendColumns*/
 ALTER TABLE employee_payroll 
-ADD BasicPay varchar,
-Deductions varchar,
-Taxableay varchar;
-SELECT * FROM employee_payroll;
+ADD Deductions DECIMAL(10,2),
+Taxableay DECIMAL(10,2);
+EXEC sp_RENAME 'employee_payroll.salary', 'BasicPay', 'COLUMN';
 
+SELECT * FROM employee_payroll;
 
